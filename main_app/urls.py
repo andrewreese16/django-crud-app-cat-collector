@@ -9,5 +9,7 @@ urlpatterns = [
   # an empty string is localhost:8000
   path('', views.home, name='home'),
   path('about/', views.about, name="about"),
-  path('cats/', views.cat_index, name="cat-index")
+  path('cats/', views.cat_index, name="cat-index"),
+  # Detail (show page) shows one cat
+  path('cats/<int:cat_id>/', views.cat_detail, name='cat-detail'),
 ]
