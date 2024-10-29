@@ -41,6 +41,8 @@
       {{ feeding_form.as_p }}
       <button type='submit' class='btn submit'>Add Feeding</button>
     </form>
+    
+    {% if cat.feeding_set.all.count %}
     <table>
       <thead>
         <tr>
@@ -56,7 +58,12 @@
           </tr>
         {% endfor %}
       </tbody>
-    </table>
+    </table> 
+    {% else %}
+      <div class="subsection-content">
+        <p>{{ cat.name }} has not been fed!</p>
+      </div>
+    {% endif %}     
   </section>
 </div>
 {% endblock %}
