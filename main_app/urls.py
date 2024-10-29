@@ -18,4 +18,5 @@ urlpatterns = [
   # pk = primary key = id
   path('cats/<int:pk>/update/', views.CatUpdate.as_view(), name='cat-update'),
   path('cats/<int:pk>/delete/', views.CatDelete.as_view(), name='cat-delete'),
+  path('cats/<int:cat_id>/add_feeding/', views.add_feeding, name='add-feeding'),
 ]
