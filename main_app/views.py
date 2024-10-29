@@ -1,7 +1,8 @@
 from django.shortcuts import render
 from .models import Cat
 
-from django.views.generic.edit import CreateView
+from django.views.generic.edit import CreateView, UpdateView, DeleteView
+
 
 
 from django.http import HttpResponse
@@ -17,6 +18,15 @@ class CatCreate(CreateView):
 # a POST request
 
 
+class CatUpdate(UpdateView):
+  model = Cat
+  # disallow the renaming of a cat by excluding the name field
+  fields = ["breed", "description", "age"]
+
+
+class CatDelete(DeleteView):
+  model = Cat
+  success_url = '/cats/' # refering to a url in the urls.py!
 
 
 

@@ -14,4 +14,8 @@ urlpatterns = [
   path('cats/<int:cat_id>/', views.cat_detail, name='cat-detail'),
   #CBV (class based views), must call the as_view() method
   path('cats/create/', views.CatCreate.as_view(), name='cat-create'),
+  # CBV (class based views) the param will always be pk by convention
+  # pk = primary key = id
+  path('cats/<int:pk>/update/', views.CatUpdate.as_view(), name='cat-update'),
+  path('cats/<int:pk>/delete/', views.CatDelete.as_view(), name='cat-delete'),
 ]
