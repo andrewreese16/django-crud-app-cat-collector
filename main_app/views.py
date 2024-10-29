@@ -1,7 +1,25 @@
 from django.shortcuts import render
 from .models import Cat
 
+from django.views.generic.edit import CreateView
+
+
 from django.http import HttpResponse
+
+# This expects a template in the format of 
+# templates/<app_name>/<model_name>_form.html
+# templates/main_app/cat_form.html
+class CatCreate(CreateView):
+  model = Cat
+  fields= '__all__'
+# Go to the models.py file for the Cat model
+# to see where the CatCreate redirects to, after
+# a POST request
+
+
+
+
+
 # Like res.send in node
 
 # Create your views here.

@@ -12,4 +12,6 @@ urlpatterns = [
   path('cats/', views.cat_index, name="cat-index"),
   # Detail (show page) shows one cat
   path('cats/<int:cat_id>/', views.cat_detail, name='cat-detail'),
+  #CBV (class based views), must call the as_view() method
+  path('cats/create/', views.CatCreate.as_view(), name='cat-create'),
 ]
